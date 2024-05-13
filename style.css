@@ -1,0 +1,158 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  font-size: 62.5%; /* isso faz o tamanho da fonte ficar padronizada para usar o rem -> (valor em px / 10) */
+  
+  --ff-primary: 'Poppins', sans-serif;
+  --text-color: hsl(0, 0%, 5%);
+
+  --primary-color: hsl(258, 73%, 62%); /* matiz, saturação e luminosidade */
+  --secundary-color: hsl(259, 52%, 48%) ;                             
+
+}
+
+body{
+  font-size: 1.6rem; /* padronizado 1.6rem = 16px */
+  background-color:hsl(0, 0%, 95%);
+}
+
+body *{
+  font-family: var(--ff-primary);
+  box-sizing: border-box;
+}
+
+
+#app{
+  padding: 2rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 2.5rem 0;
+}
+
+.sr-only { /* screen reader only (somente leitor de tela), classe muito usada para acessibilidade */
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+header h1{
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+}
+
+.search input {
+  height: 3.2rem;
+  border: 1px solid #ccc;
+  border-radius: .4rem 0 0 .4rem;
+  padding: 0 .8rem;
+}
+
+.search button {
+  background-color: var(--primary-color);
+  border-radius: 0 .4rem .4rem 0;
+  height: 3.2rem;
+  border: none;
+  padding: 0 1rem;
+  cursor: pointer;
+}
+
+.search button:hover {
+  filter: brightness(1.1);
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse; /* faz não ter espaços entre as colunas da tabela */
+  box-shadow: 0 1rem 2rem -1rem rgba(0, 0, 0, 0.3); /* eixo x, eixo y, desfoque, espalhamento */
+}
+
+table * {
+  font-size: 1.4rem;
+  color: var(--text-color);
+}
+
+/* cabeçario da tabela */
+table th { 
+  background: var(--primary-color);
+  text-align: left;
+  font-weight: normal;
+  padding: 1.5rem;
+  color: white;
+}
+
+table th:first-child {
+  border-top-left-radius: .4rem;
+}
+
+table th:last-child {
+  border-top-right-radius: .4rem;
+}
+
+table tr {
+  background-color: #eae9e9;
+}
+
+table tr:nth-child(odd) {  /* odd -> impares, even -> pares */
+  background-color: #ddd;  
+}
+
+table td {
+  padding: 1.5rem;
+  text-align: left;
+}
+
+td.user {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+td.user a {
+  text-decoration: none;
+}
+
+td.user a p {
+  font-weight: bold;
+}
+
+td .remove {
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+
+  transition: 0.2s;
+}
+
+td .remove:hover {
+  transform: scale(1.7);
+}
+
+td.user img {
+  width: 5rem;
+  height: 5rem;
+
+  object-fit: cover; /* serve para caso haja necessidade cobrir todo o espaço delimitado (nesse caso 5x5) -> caso a imagem não seja quadrada */
+
+  border-radius: 50%;
+}
